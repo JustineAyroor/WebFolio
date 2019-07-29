@@ -1,0 +1,24 @@
+<% include ./partials/header %> 
+
+<div = "row">
+    <div class = "col-md-12">
+        <h1><%= user.firstName + " " + user.lastName %></h1>
+        <div class="thumbnail">
+			<img src="<%= user.avatar %>" alt="user profile image">
+			<div class="caption"><a href="mailto:<%= user.email %>"><%= user.email %></a></div>
+			<button type="button" class="btn btn-primary"><%= user.phone %></button>
+		</div>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quasi similique architecto ad modi sunt quaerat possimus, officiis quos. Voluptatibus repellendus exercitationem, id saepe sunt consectetur non quam sapiente assumenda.
+
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quasi similique architecto ad modi sunt quaerat possimus, officiis quos. Voluptatibus repellendus exercitationem, id saepe sunt consectetur non quam sapiente assumenda.
+        <div>
+            <a class="btn btn-xs btn-warning" href="/home/<%= user._id %>/edit">Edit</a>
+                <form class="delete-form" action="/home/<%= user._id %>?_method=DELETE" method="POST">
+                    <button class="btn btn-xs btn-danger">Delete</button>
+                </form>
+            <a class="btn btn-xs btn-success" href="/">Go Back</a>
+        </div>
+    </div>
+</div>
+
+<% include ./partials/footer %>
